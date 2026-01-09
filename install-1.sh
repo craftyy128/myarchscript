@@ -1,6 +1,6 @@
 #!/bin/bash/
 # installing some packages like gnome and other stuff
-sudo pacman -S wget discord prismlauncher zsh kitty gnome firefox flatpak meson systemd git dbus libinih gcc pkgconf power-profiles-daemon cpupower starship
+sudo pacman -S wget discord prismlauncher zsh kitty gnome firefox flatpak meson systemd git dbus libinih gcc pkgconf power-profiles-daemon cpupower starship gdm
 # doing gits and stuff
 # papirus icons
 wget -qO- https://git.io/papirus-icon-theme-install | sh
@@ -33,6 +33,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # nerd font
 sudo pacman -S ttf-jetbrains-mono-nerd
 echo "make sure to set the font for starship by doing  kitten choose-fonts"
+sleep 2
 # starship
 echo " eval "$(starship init zsh)" " >> ~/.zshrc
 starship preset tokyo-night -o ~/.config/starship.toml
@@ -41,4 +42,13 @@ sudo pacman -S extension-manager gnome-shell-extension-dash-to-dock-git gnome-sh
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 echo "install openbar and blur my shell when on desktop"
+sleep 2
+# enabling gdm
+sudo systemctl enable gdm
+sudo systemctl start --now gdm
+# finally rebooting
+echo "ok we reeboting now"
+sleep 2
+reboot
+echo "if that failed js do it ur self atp
 
