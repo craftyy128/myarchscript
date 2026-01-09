@@ -5,7 +5,7 @@ sudo pacman -S wget discord prismlauncher zsh kitty gnome firefox flatpak meson 
 # papirus icons
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 # win10os cursor
-mkdir /usr/share/icons/ Win10OS-cursors
+mkdir /usr/share/icons/ Win10OS-cursordo s
 git clone https://github.com/yeyushengfan258/Win10OS-cursors.git
 cd Win10OS-cursors
 ./install.sh
@@ -17,11 +17,12 @@ git checkout 1.8.2
 ./bootstrap.sh
 sudo groupadd gamemode
 sudo usermod -aG gamemode craftyy
-gamemoded -t
+gamemoded -trc
 # getting yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
 # kitty stuff
 git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.config/kitty/kitty-themes
 cd ~/.config/kitty
@@ -30,4 +31,14 @@ echo "include ./theme.conf" >> ~/.config/kitty/kitty.conf
 # making zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # nerd font
+sudo pacman -S ttf-jetbrains-mono-nerd
+echo "make sure to set the font for starship by doing  kitten choose-fonts"
+# starship
+echo " eval "$(starship init zsh)" " >> ~/.zshrc
+starship preset tokyo-night -o ~/.config/starship.toml
+# gnome extensions
+sudo pacman -S extension-manager gnome-shell-extension-dash-to-dock-git gnome-shell-extension-appindicator 
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
+gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+echo "install openbar and blur my shell when on desktop"
 
