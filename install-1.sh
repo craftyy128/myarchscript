@@ -1,4 +1,3 @@
-#!/bin/bash/
 # installing some packages like gnome and other stuff
 sudo pacman -S wget discord prismlauncher zsh kitty gnome firefox flatpak meson systemd git dbus libinih gcc pkgconf power-profiles-daemon cpupower starship gdm
 # doing gits and stuff
@@ -51,4 +50,5 @@ echo "ok we reeboting now"
 sleep 2
 reboot
 echo "if that failed js do it ur self atp
+
 
